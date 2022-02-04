@@ -2,6 +2,8 @@ package org.afyahmis.globe.infrastructure.data;
 
 import org.afyahmis.globe.core.domain.Facility;
 import org.afyahmis.globe.core.domain.IFacilityRepository;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,6 +15,8 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FacilityRepositoryTest {
+
+    private static final Logger logger = LogManager.getLogger(FacilityRepositoryTest.class);
 
     private List<Facility> data;
     private IFacilityRepository FacilityRepository;
@@ -29,18 +33,20 @@ class FacilityRepositoryTest {
     void should_get() {
         Facility Facility=FacilityRepository.Get(this.data.get(0).getId());
         assertNotNull(Facility);
+        logger.debug(Facility.toString());
     }
 
     @Test
     void should_getAll() {
-        List<Facility> Facility=FacilityRepository.GetAll();
-        assertTrue(Facility.size()>0);
+        List<Facility> facilities=FacilityRepository.GetAll();
+        assertTrue(facilities.size()>0);
     }
 
     @Test
     void should_get_by_code() {
-        Facility Facility=FacilityRepository.GetByCode(10000);
-        assertNotNull(Facility);
+        Facility facility=FacilityRepository.GetByCode(10000);
+        assertNotNull(facility);
+        logger.debug(facility.toString());
     }
 
     @Test
@@ -49,5 +55,6 @@ class FacilityRepositoryTest {
 
         Facility toFind=FacilityRepository.Get(newFacility.getId());
         assertNotNull(newFacility);
+        logger.debug(newFacility.toString());
     }
 }
