@@ -2,16 +2,19 @@ package org.afyahmis.globe.core.domain;
 
 import org.afyahmis.globe.sharedkernel.model.AggregateRoot;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class Agency extends AggregateRoot {
     private String name;
     private String display;
-    private Set<Facility> facilities;
+    private List<Facility> facilities;
 
     public Agency(String name, String display) {
         this.name = name;
         this.display = display;
+        facilities=new ArrayList<>();
     }
 
 
@@ -21,7 +24,7 @@ public class Agency extends AggregateRoot {
     public String getDisplay() {
         return display;
     }
-    public Set<Facility> getFacilities() {
+    public List<Facility> getFacilities() {
         return facilities;
     }
 
