@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.afyahmis.globe.shared.AggregateRootTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-04T14:29:00" hostname="LIVEDEV" time="0.054">
+  <properties/>
+  <testcase name="should_haveId()" classname="org.afyahmis.globe.shared.AggregateRootTest" time="0.054"/>
+  <system-out><![CDATA[17:29:00.656 [Test worker] INFO  org.afyahmis.globe.shared.AggregateRootTest - 18e711cd-3b40-42e8-b73f-844453fe1973 Subaru
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
