@@ -27,4 +27,13 @@ public class Facility extends AggregateRoot {
     public UUID getAgencyId() {
         return agencyId;
     }
+
+    @Override
+    public String toString() {
+        return "Facility{" +
+                "code=" + code +
+                ", name='" + name + '\'' +
+                ", id=" + id +
+                '}';
+    }
 }

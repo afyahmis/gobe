@@ -24,4 +24,13 @@ public class Agency extends AggregateRoot {
     public Set<Facility> getFacilities() {
         return facilities;
     }
+
+    @Override
+    public String toString() {
+        return "Agency{" +
+                "name='" + name + '\'' +
+                ", display='" + display + '\'' +
+                ", id=" + id +
+                '}';
+    }
 }
