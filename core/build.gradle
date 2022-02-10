@@ -13,8 +13,11 @@ dependencies {
     implementation project(':sharedkernel')
     implementation 'org.apache.logging.log4j:log4j-api:2.17.1'
     implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
+    implementation 'org.springframework:spring-context:5.3.15'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation 'org.springframework:spring-test:5.3.15'
+    testImplementation project(':infrastructure')
 }
 
 test {

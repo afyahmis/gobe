@@ -1,11 +1,11 @@
 package org.afyahmis.globe.core.domain;
 
 
-import org.afyahmis.globe.sharedkernel.model.AggregateRoot;
+import org.afyahmis.globe.sharedkernel.model.BaseAggregate;
 
 import java.util.UUID;
 
-public class Facility extends AggregateRoot {
+public class Facility extends BaseAggregate {
     private int code;
     private String name;
     private UUID agencyId;

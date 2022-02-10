@@ -2,14 +2,20 @@ package org.afyahmis.globe.infrastructure.data;
 
 import org.afyahmis.globe.core.domain.Agency;
 import org.afyahmis.globe.core.domain.IAgencyRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class AgencyRepository extends AggregateRootRepository<Agency> implements IAgencyRepository {
+@Repository
+public class AgencyRepository extends BaseAggregateRepository<Agency> implements IAgencyRepository {
     public AgencyRepository() {
-    }
-
-    public AgencyRepository(List<Agency> data) {
-        super(data);
+        this.data = new ArrayList<>();
+        this.data.add(new Agency("CDC", "CDC"));
+        this.data.add(new Agency("USAID", "USAID"));
     }
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+        <context:component-scan base-package="org.afyahmis.globe"/>
+
+
+<!--    <bean id="agencyRepository" class="org.afyahmis.globe.infrastructure.data.AgencyRepository"/>-->
+<!--    <bean id="facilityRepository" class="org.afyahmis.globe.infrastructure.data.FacilityRepository"/>-->
+
+<!--    <bean id="agencyService" class="org.afyahmis.globe.core.services.AgencyService">-->
+<!--       <constructor-arg index="0" ref="agencyRepository"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="facilityService" class="org.afyahmis.globe.core.services.FacilityService">-->
+<!--        <constructor-arg index="0" ref="facilityRepository"/>-->
+<!--    </bean>-->
+
+</beans>

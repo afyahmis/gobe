@@ -4,7 +4,6 @@ import org.afyahmis.globe.core.domain.Facility;
 import org.afyahmis.globe.core.domain.IFacilityRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,38 +12,38 @@ import java.util.List;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
+//import org.springframework.test.context;
 
+// @ContextConfiguration({"classpath:/test-applicationContext.xml"})
 class FacilityRepositoryTest {
 
     private static final Logger logger = LogManager.getLogger(FacilityRepositoryTest.class);
 
     private List<Facility> data;
-    private IFacilityRepository FacilityRepository;
+    private IFacilityRepository facilityRepository;
 
     @BeforeEach
     void setUp() {
-        data=new ArrayList<>();
-        data.add(new Facility(10000,"Facilit A", UUID.randomUUID()));
-        data.add(new Facility(10100,"Facilit B", UUID.randomUUID()));
-        FacilityRepository=new FacilityRepository(data);
+        facilityRepository =new FacilityRepository();
+        this.data=facilityRepository.GetAll();
     }
 
     @Test
     void should_get() {
-        Facility Facility=FacilityRepository.Get(this.data.get(0).getId());
+        Facility Facility= facilityRepository.Get(this.data.get(0).getId());
         assertNotNull(Facility);
         logger.debug(Facility.toString());
     }
 
     @Test
     void should_getAll() {
-        List<Facility> facilities=FacilityRepository.GetAll();
+        List<Facility> facilities= facilityRepository.GetAll();
         assertTrue(facilities.size()>0);
     }
 
     @Test
     void should_get_by_code() {
-        Facility facility=FacilityRepository.GetByCode(10000);
+        Facility facility= facilityRepository.GetByCode(10000);
         assertNotNull(facility);
         logger.debug(facility.toString());
     }
@@ -53,7 +52,7 @@ class FacilityRepositoryTest {
     void should_create() {
         Facility newFacility= new Facility(12100,"Facilit B", UUID.randomUUID());
 
-        Facility toFind=FacilityRepository.Get(newFacility.getId());
+        Facility toFind= facilityRepository.Get(newFacility.getId());
         assertNotNull(newFacility);
         logger.debug(newFacility.toString());
     }

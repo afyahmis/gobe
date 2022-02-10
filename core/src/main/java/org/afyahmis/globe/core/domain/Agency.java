@@ -1,12 +1,11 @@
 package org.afyahmis.globe.core.domain;
 
-import org.afyahmis.globe.sharedkernel.model.AggregateRoot;
+import org.afyahmis.globe.sharedkernel.model.BaseAggregate;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
-public class Agency extends AggregateRoot {
+public class Agency extends BaseAggregate {
     private String name;
     private String display;
     private List<Facility> facilities;

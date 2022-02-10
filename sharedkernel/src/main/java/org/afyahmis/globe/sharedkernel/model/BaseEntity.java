@@ -1,6 +1,6 @@
 package org.afyahmis.globe.sharedkernel.model;
 
-public abstract class RootEntity<TId> {
+public abstract class BaseEntity<TId> {
     protected TId id;
 
     public TId getId() {
