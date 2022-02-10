@@ -1,6 +1,6 @@
 package org.afyahmis.globe.sharedkernel;
 
-import org.afyahmis.globe.sharedkernel.model.AggregateRoot;
+import org.afyahmis.globe.sharedkernel.model.BaseAggregate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
@@ -9,9 +9,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AggregateRootTest {
+class BaseAggregateTest {
 
-    private static final Logger logger = LogManager.getLogger(AggregateRootTest.class);
+    private static final Logger logger = LogManager.getLogger(BaseAggregateTest.class);
     @Test
     public void should_haveId(){
         TestCar car=new TestCar();
@@ -21,7 +21,7 @@ class AggregateRootTest {
         logger.info(car.getId()+" "+car.getName());
     }
 
-    class TestCar extends AggregateRoot {
+    class TestCar extends BaseAggregate {
 
 
         private String name;

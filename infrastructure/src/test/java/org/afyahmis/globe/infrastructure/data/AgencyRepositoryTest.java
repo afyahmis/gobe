@@ -7,10 +7,12 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 
 class AgencyRepositoryTest {
 
@@ -20,10 +22,8 @@ class AgencyRepositoryTest {
     private IAgencyRepository agencyRepository;
     @BeforeEach
     void setUp() {
-        data=new ArrayList<>();
-        data.add(new Agency("CDC","CDC"));
-        data.add(new Agency("USAID","USAID"));
-        agencyRepository=new AgencyRepository(data);
+        agencyRepository=new AgencyRepository();
+        data=agencyRepository.GetAll();
     }
 
     @Test

@@ -1,22 +1,17 @@
 package org.afyahmis.globe.infrastructure.data;
 
-import org.afyahmis.globe.sharedkernel.interfaces.IAggregateRootRepository;
-import org.afyahmis.globe.sharedkernel.model.AggregateRoot;
+import org.afyahmis.globe.sharedkernel.interfaces.IBaseAggregateRepository;
+import org.afyahmis.globe.sharedkernel.model.BaseAggregate;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
-public abstract class AggregateRootRepository<T extends AggregateRoot> implements IAggregateRootRepository<T> {
+public abstract class BaseAggregateRepository<T extends BaseAggregate> implements IBaseAggregateRepository<T> {
 
-    private List<T> data = new ArrayList<>();
+    protected List<T> data = new ArrayList<>();
 
-    protected AggregateRootRepository() {
-    }
-
-    protected AggregateRootRepository(List<T> data) {
-        this.data = data;
+    protected BaseAggregateRepository() {
     }
 
     @Override

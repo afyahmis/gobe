@@ -12,4 +12,5 @@ rootProject.name = 'globe'
 include 'core'
 include 'sharedkernel'
 include 'infrastructure'
+include 'app'
 
