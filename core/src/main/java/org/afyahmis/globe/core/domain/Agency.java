@@ -27,6 +27,10 @@ public class Agency extends BaseAggregate {
         return facilities;
     }
 
+    public void ChangeName(String newName) {
+        this.name += newName;
+    }
+
     @Override
     public String toString() {
         return "Agency{" +
