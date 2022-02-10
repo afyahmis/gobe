@@ -21,6 +21,6 @@ public class FacilityService implements IFacilityService {
 
     @Override
     public List<Facility> Load() {
-       return this.facilityRepository.GetAll();
+        return this.facilityRepository.GetAll();
     }
 }
